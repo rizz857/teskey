@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>404 — Website Temporarily Closed | OnePay</title>
+
+  <meta name="description"
+        content="Website OnePay sedang ditutup sementara. Kunjungi portal website baru dan channel resmi untuk mendapatkan informasi terbaru.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #070b16;
+      --bg-soft: #0d1324;
+      --card: rgba(17, 25, 45, 0.72);
+      --border: rgba(255,255,255,.09);
+      --text: #f4f7ff;
+      --muted: #9ca8c3;
+      --blue: #5b8cff;
+      --blue-light: #83a9ff;
+      --glow: rgba(91,140,255,.25);
+    }
+
+    body {
+      min-height: 100vh;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(91,140,255,.18), transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(71,94,255,.08), transparent 35%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 24px;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .18;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background: #426fff;
+      top: 15%;
+      left: -120px;
+    }
+
+    body::after {
+      background: #7c4dff;
+      bottom: 5%;
+      right: -120px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+      animation: fadeUp .8s ease forwards;
+    }
+
+    .logo {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 24px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(145deg, #162344, #0c1429);
+      border: 1px solid var(--border);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 45px var(--glow);
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .logo span {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #fff, var(--blue-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .code {
+      font-size: clamp(82px, 20vw, 150px);
+      line-height: .85;
+      font-weight: 950;
+      letter-spacing: -9px;
+      margin-bottom: 25px;
+      background:
+        linear-gradient(180deg, #ffffff 5%, #789fff 55%, #304e9a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 60px rgba(91,140,255,.14);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(91,140,255,.08);
+      border: 1px solid rgba(91,140,255,.18);
+      color: #aac1ff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 12px var(--blue);
+      animation: pulse 1.8s infinite;
+    }
+
+    h1 {
+      font-size: clamp(27px, 6vw, 43px);
+      line-height: 1.15;
+      letter-spacing: -.8px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      max-width: 570px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .card {
+      margin-top: 30px;
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 25px 80px rgba(0,0,0,.25);
+    }
+
+    .portal {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: white;
+      text-align: left;
+      padding: 15px;
+      border-radius: 16px;
+      background: linear-gradient(
+        135deg,
+        rgba(91,140,255,.18),
+        rgba(91,140,255,.06)
+      );
+      border: 1px solid rgba(91,140,255,.2);
+      transition: .25s ease;
+    }
+
+    .portal:hover {
+      transform: translateY(-2px);
+      border-color: rgba(91,140,255,.45);
+      box-shadow: 0 12px 35px rgba(45,90,200,.16);
+    }
+
+    .portal-icon {
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(91,140,255,.14);
+      color: #91b0ff;
+      font-size: 20px;
+    }
+
+    .portal-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .portal-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .portal-url {
+      color: #8795b5;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .arrow {
+      color: #8eabff;
+      font-size: 20px;
+      transition: transform .25s ease;
+    }
+
+    .portal:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    .channels {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .channel {
+      text-decoration: none;
+      color: white;
+      padding: 15px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      transition: .25s ease;
+      text-align: left;
+    }
+
+    .channel:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.045);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .channel strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .channel small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer {
+      margin-top: 27px;
+      color: #59657f;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .footer b {
+      color: #7887a7;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: .45;
+        transform: scale(.75);
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 18px;
+      }
+
+      .logo {
+        width: 68px;
+        height: 68px;
+        border-radius: 21px;
+      }
+
+      .code {
+        letter-spacing: -6px;
+        margin-bottom: 21px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .card {
+        padding: 13px;
+        border-radius: 19px;
+      }
+
+      .channels {
+        grid-template-columns: 1fr;
+      }
+
+      .portal {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="logo" aria-label="OnePay">
+      <span>OP</span>
+    </div>
+
+    <div class="code">404</div>
+
+    <div class="badge">
+      <span class="dot"></span>
+      Website Temporarily Closed
+    </div>
+
+    <h1>Website sedang ditutup sementara</h1>
+
+    <p class="description">
+      Website ini sedang dalam proses penutupan dan pembaruan.
+      Untuk mengakses website baru OnePay, silakan gunakan portal resmi
+      di bawah ini. Informasi dan pembaruan terbaru juga akan diumumkan
+      melalui channel resmi.
+    </p>
+
+    <section class="card">
+
+      <!-- PORTAL WEBSITE BARU -->
+      <a
+        class="portal"
+        href="https://shirokoku.onepay.web.id"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="portal-icon">↗</div>
+
+        <div class="portal-info">
+          <div class="portal-title">
+            Buka Portal Website Baru
+          </div>
+
+          <div class="portal-url">
+            shirokoku.onepay.web.id
+          </div>
+        </div>
+
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="channels">
+
+        <!-- GANTI LINK DI BAWAH DENGAN CHANNEL RESMI -->
+        <a
+          class="channel"
+          href="https://whatsapp.com/channel/0029Vb7gcbuLdQelWzrTzD3D"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>WhatsApp Channel</strong>
+          <small>Update & informasi resmi</small>
+        </a>
+
+        <!-- GANTI LINK DI BAWAH DENGAN CHANNEL RESMI KEDUA -->
+        <a
+          class="channel"
+          href="https://whatsapp.com/channel/0029VbCsmdMC1Fu6NbIaaY2T"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Official Updates</strong>
+          <small>Berita & pembaruan OnePay</small>
+        </a>
+
+      </div>
+
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> <b>OnePay</b> ·
+      Official Website Portal
+      <br>
+      Please use the official portal above for the latest access.
+    </div>
+
+  </main>
+
+  <script>
+    // Tahun otomatis
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Sedikit efek ketika portal diklik
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        link.style.opacity = "0.7";
+
+        setTimeout(() => {
+          link.style.opacity = "";
+        }, 300);
+      });
+    });
+  </script>
+
+</body>
+</html>
